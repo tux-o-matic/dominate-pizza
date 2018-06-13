@@ -9,6 +9,7 @@ models/
 
 # PyCharm project
 .idea
+.idea/vcs.xml
 .idea/
 
 # OS FS
