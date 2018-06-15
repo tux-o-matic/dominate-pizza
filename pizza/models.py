@@ -20,14 +20,6 @@ class Product(models.Model):
         abstract = True
 
 
-class Order(models.Model):
-    owner = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    placed_on = models.DateTimeField(auto_now_add=True)
-    shipped_on = models.DateTimeField(auto_now_add=True)
-
-    items = models.ManyToManyField(Product)
-
-
 class Food(Product):
 
     organic = models.BooleanField(default=False)
@@ -67,6 +59,18 @@ class Menu(Product):
     burgers = models.ManyToManyField(Burger)
     drinks = models.ManyToManyField(Drink)
     meals = models.ManyToManyField(Meal)
+    pizzas = models.ManyToManyField(Pizza)
+
+
+class Order(models.Model):
+    owner = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    placed_on = models.DateTimeField(auto_now_add=True)
+    shipped_on = models.DateTimeField(auto_now_add=True)
+
+    burgers = models.ManyToManyField(Burger)
+    drinks = models.ManyToManyField(Drink)
+    meals = models.ManyToManyField(Meal)
+    menus = models.ManyToManyField(Menu)
     pizzas = models.ManyToManyField(Pizza)
 
 

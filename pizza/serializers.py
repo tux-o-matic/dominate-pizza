@@ -22,7 +22,7 @@ class MealSerializer(serializers.ModelSerializer):
 
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Meal
+        model = models.Menu
         fields = ('id', 'name', 'description', 'price',)
 
 

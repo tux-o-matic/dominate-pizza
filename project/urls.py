@@ -23,6 +23,7 @@ router = routers.DefaultRouter()
 router.register(r'burgers', views.BurgerViewSet)
 router.register(r'drinks', views.DrinkViewSet)
 router.register(r'meals', views.MealViewSet)
+router.register(r'menus', views.MenuViewSet)
 router.register(r'pizzas', views.PizzaViewSet)
 
 urlpatterns = [
