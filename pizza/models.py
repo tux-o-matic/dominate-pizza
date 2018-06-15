@@ -55,10 +55,10 @@ class Drink(Food):
 
 class Menu(Product):
     # inherited price is expected to be cheaper than sum of items in menu
-    burgers = models.ManyToManyField(Burger)
-    drinks = models.ManyToManyField(Drink)
-    meals = models.ManyToManyField(Meal)
-    pizzas = models.ManyToManyField(Pizza)
+    burgers = models.ManyToManyField(Burger, blank=True)
+    drinks = models.ManyToManyField(Drink, blank=True)
+    meals = models.ManyToManyField(Meal, blank=True)
+    pizzas = models.ManyToManyField(Pizza, blank=True)
 
 
 class Order(models.Model):
@@ -66,10 +66,10 @@ class Order(models.Model):
     placed_on = models.DateTimeField(auto_now_add=True)
     shipped_on = models.DateTimeField(auto_now_add=True)
 
-    burgers = models.ManyToManyField(Burger)
-    drinks = models.ManyToManyField(Drink)
-    meals = models.ManyToManyField(Meal)
-    menus = models.ManyToManyField(Menu)
-    pizzas = models.ManyToManyField(Pizza)
+    burgers = models.ManyToManyField(Burger, blank=True)
+    drinks = models.ManyToManyField(Drink, blank=True)
+    meals = models.ManyToManyField(Meal, blank=True)
+    menus = models.ManyToManyField(Menu, blank=True)
+    pizzas = models.ManyToManyField(Pizza, blank=True)
 
 

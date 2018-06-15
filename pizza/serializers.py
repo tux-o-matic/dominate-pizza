@@ -13,7 +13,7 @@ class DrinkSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Drink
         fields = ('id', 'url', 'name', 'description',
-                  'price',)
+                  'alcohol', 'price', 'size',)
 
 
 class MealSerializer(serializers.HyperlinkedModelSerializer):
@@ -27,7 +27,7 @@ class MenuSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Menu
         fields = ('id', 'url', 'name', 'description',
-                  'price',)
+                  'burgers', 'currency', 'drinks', 'meals', 'pizzas', 'price', 'vat')
 
 
 class PizzaSerializer(serializers.HyperlinkedModelSerializer):
