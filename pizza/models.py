@@ -19,8 +19,12 @@ class Food(models.Model):
 class Burger(Food):
     bacon = models.BooleanField(default=False)
     cheese = models.BooleanField(default=False)
-    steaks = models.IntegerField()
+    steaks = models.SmallIntegerField(default=0)
     others = models.CharField(max_length=255)
+
+
+class Meal(Food):
+    pass
 
 class Topping(Food):
     pass
@@ -28,7 +32,7 @@ class Topping(Food):
 
 class Pizza(Food):
     calzone = models.BooleanField()
-    diameter = models.IntegerField()
+    diameter = models.SmallIntegerField(default=0)
 
     toppings = models.ManyToManyField(Topping)
 

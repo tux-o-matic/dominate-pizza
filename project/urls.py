@@ -22,6 +22,8 @@ from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register(r'burgers', views.BurgerViewSet)
+router.register(r'drinks', views.DrinkViewSet)
+router.register(r'meals', views.MealViewSet)
 router.register(r'pizzas', views.PizzaViewSet)
 
 urlpatterns = [
