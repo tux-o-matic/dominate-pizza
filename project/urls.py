@@ -20,6 +20,8 @@ from pizza import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
+router.register(r'burgers', views.BurgerViewSet)
+router.register(r'pizzas', views.PizzaViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
