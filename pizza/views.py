@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import authentication, permissions, viewsets
-from .models import Burger, Pizza
-from .serializers import BurgerSerializer, PizzaSerializer
+from .models import Burger, Drink, Meal, Pizza
+from .serializers import BurgerSerializer, DrinkSerializer, MealSerializer, PizzaSerializer
 
 
 def index(request):
@@ -33,6 +33,16 @@ class RestrictedtMixin(object):
 class BurgerViewSet(DefaultMixin, viewsets.ModelViewSet):
     queryset = Burger.objects.order_by('name')
     serializer_class = BurgerSerializer
+
+
+class DrinkViewSet(DefaultMixin, viewsets.ModelViewSet):
+    queryset = Drink.objects.order_by('name')
+    serializer_class = DrinkSerializer
+
+
+class MealViewSet(DefaultMixin, viewsets.ModelViewSet):
+    queryset = Meal.objects.order_by('name')
+    serializer_class = MealSerializer
 
 
 class PizzaViewSet(DefaultMixin, viewsets.ModelViewSet):

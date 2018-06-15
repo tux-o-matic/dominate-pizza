@@ -22,6 +22,10 @@ class Burger(Food):
     steaks = models.SmallIntegerField(default=0)
     others = models.CharField(max_length=255)
 
+
+class Meal(Food):
+    pass
+
 class Topping(Food):
     pass
 

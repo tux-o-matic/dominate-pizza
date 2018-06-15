@@ -8,6 +8,18 @@ class BurgerSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'description',)
 
 
+class DrinkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Drink
+        fields = ('id', 'name', 'description',)
+
+
+class MealSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Meal
+        fields = ('id', 'name', 'description',)
+
+
 class PizzaSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Pizza
