@@ -12,16 +12,15 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
 
-    price = models.DecimalField(..., max_digits=5, decimal_places=2)
-    vat = models.DecimalField(..., max_digits=5, decimal_places=2)
-    currency = models.CharField(max_length=2)
+    price = models.DecimalField(default=0, max_digits=5, decimal_places=2)
+    vat = models.DecimalField(default=0, max_digits=5, decimal_places=2)
+    currency = models.CharField(max_length=3)
 
     class Meta:
         abstract = True
 
 
 class Food(Product):
-
     organic = models.BooleanField(default=False)
     vegetarian = models.BooleanField(default=False)
     vegan = models.BooleanField(default=False)
@@ -43,14 +42,14 @@ class Topping(Food):
 
 
 class Pizza(Food):
-    calzone = models.BooleanField()
+    calzone = models.BooleanField(default=False)
     diameter = models.SmallIntegerField(default=0)
 
     toppings = models.ManyToManyField(Topping)
 
 
 class Drink(Food):
-    size = models.DecimalField(..., max_digits=3, decimal_places=2)
+    size = models.DecimalField(default=0, max_digits=3, decimal_places=2)
     alcohol = models.BooleanField(default=False)
 
 
