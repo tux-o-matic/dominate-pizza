@@ -1,4 +1,4 @@
-# Django 2 example app for OpenShift
+# Django 2 example app for OpenShift (Kubernetes)
 
 ## Dominate Pizza, the site for pizza lovers
 Using Django 2, Gunicorn and Django Rest Framework.
@@ -12,10 +12,14 @@ Since those files cannot be placed on persistent volume during build and these a
 
 ### OpenShift settings
 
-Environment variables to overwrite defaults:
+#### Common environment variables to overwrite defaults:
  - DEBUG
  - DJANGO_LOG_LEVEL
  - DJANGO_SECRET_KEY
  - OPENSHIFT_REPO_DIR
  
+ #### Deployment
+ When deploying a Python application in OpenShift, the DeploymentConfig created uses the *Rolling* strategy which is a risk since OpenShift automatically calls Django's *migrate* when starting the container. There for it's safer to change the strategy to *Recreate*.
+ 
+ ### Development
  If running locally (127.0.0.1) and setting DEBUG to True, the Django Debug Toolbar will be shown.
