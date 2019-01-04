@@ -3,7 +3,14 @@
 ## Dominate Pizza, the site for pizza lovers
 Using Django 2, Gunicorn and Django Rest Framework.
 
-## OpenShift settings
+### Serving static content
+The application will be served in OpenShift by Gunicorn. 
+By default the Python S2I container will run the Django collect static command (change behavior with *DISABLE_COLLECTSTATIC*).
+Since those files cannot be placed on persistent volume during build and these are not served by the development Django server, you need to go for one of these options:
+- Make Gunicorn serve the */static* path. 
+- Run an Nginx container build with each new change to your static files or with a *PV* mounted and loaded with the files.
+
+### OpenShift settings
 
 Environment variables to overwrite defaults:
  - DEBUG
