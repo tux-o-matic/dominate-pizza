@@ -172,6 +172,10 @@ def tracer():
     from jaeger_client import Config
     config = Config(
         config={ # usually read from some yaml config
+            'local_agent': {
+                'reporting_host': os.getenv('JAEGER_AGENT_HOST', 'localhost'),
+                'reporting_port': '6832'
+            },
             'sampler': {
                 'type': 'const',
                 'param': 1,
