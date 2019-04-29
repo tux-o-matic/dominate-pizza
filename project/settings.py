@@ -180,4 +180,4 @@ def tracer():
         },
         validate=True,
         service_name='dominate-pizza')
-return config.initialize_tracer()
+    return config.initialize_tracer()
