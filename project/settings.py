@@ -166,4 +166,18 @@ STATICFILES_DIRS = [
 
 OPENTRACING_TRACE_ALL = True
 OPENTRACING_TRACED_ATTRIBUTES = ['META']
-OPENTRACING_TRACING = django_opentracing.DjangoTracing()
+OPENTRACING_TRACER_CALLABLE = __name__ + '.tracer'
+
+def tracer():
+    from jaeger_client import Config
+    config = Config(
+        config={ # usually read from some yaml config
+            'sampler': {
+                'type': 'const',
+                'param': 1,
+            },
+            'logging': True,
+        },
+        validate=True,
+        service_name='dominate-pizza')
+return config.initialize_tracer()
