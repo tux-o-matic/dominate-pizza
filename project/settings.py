@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+import django_opentracing
+import opentracing
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -70,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_opentracing.OpenTracingMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -159,3 +162,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles'),
 ]
 
+# Tracing
+
+OPENTRACING_TRACE_ALL = True
+OPENTRACING_TRACED_ATTRIBUTES = ['META']
+OPENTRACING_TRACING = django_opentracing.DjangoTracing()
