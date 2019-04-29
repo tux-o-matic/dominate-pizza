@@ -174,7 +174,6 @@ def tracer():
         config={ # usually read from some yaml config
             'local_agent': {
                 'reporting_host': os.getenv('JAEGER_AGENT_HOST', 'localhost'),
-                'reporting_port': '6832'
             },
             'sampler': {
                 'type': 'const',
