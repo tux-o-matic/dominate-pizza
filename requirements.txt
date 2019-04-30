@@ -6,6 +6,7 @@ djangorestframework==3.8.2
 #greenlet==0.4.13
 gunicorn==19.8.1
 Markdown==2.6.11
+psycopg2==2.7.7
 pytz==2018.4
 PyYAML==5.1
 sqlparse==0.2.4
