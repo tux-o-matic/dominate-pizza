@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 from rest_framework import authentication, permissions, viewsets
 from .models import Burger, Drink, Meal, Menu, Pizza
 from .serializers import BurgerSerializer, DrinkSerializer, MealSerializer, MenuSerializer, PizzaSerializer
@@ -10,6 +11,9 @@ def index(request):
         'index.html',
     )
 
+
+class PizzaList(ListView):
+    model = Pizza
 
 class DefaultMixin(object):
     paginate_by = 25
