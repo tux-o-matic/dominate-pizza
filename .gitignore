@@ -62,8 +62,8 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-#db.sqlite3
-pizza/migrations/*
+db.sqlite3
+dominate/migrations/
 
 # Sphinx documentation
 docs/_build/

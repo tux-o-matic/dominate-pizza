@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
-from pizza import views
+from dominate import views
 from rest_framework import routers
 from django.conf.urls.static import static
 
