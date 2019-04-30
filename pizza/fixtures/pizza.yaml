@@ -1,5 +1,4 @@
 - model: pizza.pizza
-  pk: 1
   fields:
     name: Margherita
     description: 'Typical Neapolitan pizza'
@@ -8,7 +7,6 @@
     vegetarian: True
     diameter: 30
 - model: pizza.pizza
-  pk: 2
   fields:
     name: Pepperoni
     price: 9.0
