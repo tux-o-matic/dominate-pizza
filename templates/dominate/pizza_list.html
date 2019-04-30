@@ -16,7 +16,7 @@
             <h2>Pizzas</h2>
             <ul>
                 {% for pizza in object_list %}
-                <li>{{ pizza.name}}</li>
+                <li>{{ pizza.name}} <b>{{ pizza.price }}{{ pizza.currency }}</b></li>
                 {% endfor%}
             </ul>
 

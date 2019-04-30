@@ -1,6 +1,6 @@
 {% block choice %}
 <div class="col-lg-3">
-  <h1 class="my-4">Shop Name</h1>
+  <h1 class="my-4">Menu</h1>
   <div class="list-group">
     <a href="#" class="list-group-item">Burgers</a>
     <a href="/pizzas" class="list-group-item">Pizzas</a>
