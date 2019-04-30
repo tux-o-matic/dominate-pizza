@@ -1,0 +1,15 @@
+- model: dominate.pizza
+  fields:
+    name: Margherita
+    description: 'Typical Neapolitan pizza'
+    price: 8.0
+    currency: EUR
+    vegetarian: True
+    diameter: 30
+- model: dominate.pizza
+  fields:
+    name: Pepperoni
+    price: 9.0
+    currency: EUR
+    diameter: 30
+    

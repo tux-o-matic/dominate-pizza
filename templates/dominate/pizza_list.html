@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Navigation -->
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        {% include "choice.template" %}
+        
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+            <h2>Pizzas</h2>
+            <ul>
+                {% for pizza in object_list %}
+                <li>{{ pizza.name}} <b>{{ pizza.price }}{{ pizza.currency }}</b></li>
+                {% endfor%}
+            </ul>
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+{% endblock %}
+
+
