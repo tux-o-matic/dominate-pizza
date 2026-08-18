@@ -1,7 +1,7 @@
-# Django 2 example app for OpenShift (Kubernetes)
+# Django example app for OpenShift (Kubernetes)
 
 ## Dominate Pizza, the site for pizza lovers
-Using Django 2, Gunicorn and Django Rest Framework.
+Using Django, Gunicorn and Django Rest Framework.
 
 ### Serving static content
 The application will be served in OpenShift by Gunicorn. 
